@@ -1,0 +1,54 @@
+{
+  "compilerOptions": {
+    "target": "es2020",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "baseUrl": "./",
+    "typeRoots": [
+      "./node_modules/@types"
+    ],
+    "allowJs": false,
+    "sourceMap": false,
+    "outDir": "./dist",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "noImplicitAny": false,
+    "strictNullChecks": false,
+    "skipLibCheck": true,
+    "paths": {
+      "@constants": [
+        "./src/constants"
+      ],
+      "@constants/*": [
+        "./src/constants/*"
+      ],
+      "@enums": [
+        "./src/enums"
+      ],
+      "@enums/*": [
+        "./src/enums/*"
+      ],
+      "@src/*": [
+        "./src/*"
+      ],
+      "@services": [
+        "./src/services"
+      ]
+    },
+    "resolveJsonModule": true
+  },
+  "include": [
+    "./src/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "tests"
+  ],
+  "ts-node": {
+    "require": [
+      "tsconfig-paths/register"
+    ]
+  }
+}

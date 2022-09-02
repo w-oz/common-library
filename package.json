@@ -1,0 +1,35 @@
+{
+  "name": "bs-common-library",
+  "description": "All common tools, utils and etc. for Biswap products",
+  "version": "1.0.0",
+  "private": true,
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "rm -rf ./dist && tsc && tsconfig-replace-paths -s ./src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/biswapcom/common-library.git"
+  },
+  "keywords": [
+    "nodejs",
+    "mongodb",
+    "typescript",
+    "rabbitmq"
+  ],
+  "author": "bs-dev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/biswapcom/common-library/issues"
+  },
+  "homepage": "https://github.com/biswapcom/common-library#readme",
+  "dependencies": {
+    "@sushiswap/contracts": "^1.0.0-canary.0",
+    "@sushiswap/sdk": "^5.0.0-canary.116",
+    "colors": "^1.4.0",
+    "moment": "^2.29.4"
+  },
+  "devDependencies": {
+    "@types/node": "^18.7.14"
+  }
+}
