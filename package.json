@@ -3,7 +3,7 @@
   "description": "All common tools, utils and etc. for Biswap products",
   "version": "1.0.0",
   "private": true,
-  "main": "dist/index.js",
+  "main": "index.ts",
   "scripts": {
     "build": "rm -rf ./dist && tsc && tsconfig-replace-paths -s ./src"
   },
@@ -24,12 +24,15 @@
   },
   "homepage": "https://github.com/biswapcom/common-library#readme",
   "dependencies": {
-    "@sushiswap/contracts": "^1.0.0-canary.0",
-    "@sushiswap/sdk": "^5.0.0-canary.116",
     "colors": "^1.4.0",
-    "moment": "^2.29.4"
+    "moment": "^2.29.4",
+    "web3": "^1.7.5"
   },
   "devDependencies": {
-    "@types/node": "^18.7.14"
+    "@types/node": "^18.7.14",
+    "nodemon": "^2.0.19",
+    "ts-node": "^10.9.1",
+    "tsconfig-paths": "^3.14.1",
+    "typescript": "^4.8.2"
   }
 }

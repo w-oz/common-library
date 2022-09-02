@@ -17,9 +17,6 @@
     "strictNullChecks": false,
     "skipLibCheck": true,
     "paths": {
-      "@constants": [
-        "./src/constants"
-      ],
       "@constants/*": [
         "./src/constants/*"
       ],
