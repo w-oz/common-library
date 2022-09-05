@@ -26,7 +26,7 @@ class LogService {
         };
     }
     log(level, message, options = {}) {
-        const opts = Object.assign(Object.assign({}, this.defaultOptions), options);
+        const opts = { ...this.defaultOptions, ...options };
         switch (level.toLowerCase()) {
             case log_level_enum_1.default.Notice:
                 message = colors.notice(message);
