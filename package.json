@@ -3,10 +3,20 @@
   "description": "All common tools, utils and etc. for Biswap products",
   "version": "1.0.0",
   "private": true,
-  "main": "dist/index.js",
-  "module": "dist/index.js",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "scripts": {
-    "build": "rm -rf ./dist && tsc && tsconfig-replace-paths -s ./src"
+    "build": "rm -rf ./dist && tsc && tsconfig-replace-paths -s ./src && npm pack"
+  },
+  "files":[
+    "dist/**"
+  ],
+  "exports": {
+    "/": {
+      "import": "./dist/index.js",
+      "require": null
+    },
+    "constants": "./dist/constants"
   },
   "repository": {
     "type": "git",

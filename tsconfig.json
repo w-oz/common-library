@@ -1,8 +1,12 @@
 {
   "compilerOptions": {
-    "target": "es2020",
-    "module": "nodenext",
-    "moduleResolution": "node",
+    "target": "es5",
+    "module": "commonjs",
+    "lib": ["es2020", "es2019", "es2018", "es2017", "es7", "es6"],
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true ,
+    "declaration": true,
+
     "baseUrl": "./",
     "typeRoots": [
       "./node_modules/@types"
@@ -10,8 +14,7 @@
     "allowJs": false,
     "sourceMap": false,
     "outDir": "./dist",
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
+    "rootDir": "./src",
     "strict": true,
     "noImplicitAny": false,
     "strictNullChecks": false,
@@ -33,7 +36,6 @@
         "./src/services"
       ]
     },
-    "resolveJsonModule": true
   },
   "include": [
     "./src/**/*"

@@ -1,7 +1,2 @@
-import * as contracts from './contract.addresses';
-import * as tokens from './token.addresses';
-
-export {
-    contracts,
-    tokens
-}
+export * from './contract.addresses';
+export * from './token.addresses';

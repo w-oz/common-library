@@ -1,5 +1,5 @@
 import moment from "moment";
-import LogLevel from "@enums/log-level.enum";
+import { LogLevel } from "@enums";
 
 const colors = require('colors');
 

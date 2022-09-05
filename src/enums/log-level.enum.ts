@@ -1,4 +1,4 @@
-enum LogLevel {
+export enum LogLevel {
     Notice = 'notice',
     Info = 'info',
     Success = 'success',
@@ -6,5 +6,3 @@ enum LogLevel {
     Error = 'error',
     Debug = 'debug',
 }
-
-export default LogLevel;

@@ -1,11 +1,22 @@
 "use strict";
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const moment_1 = __importDefault(require("moment"));
-const log_level_enum_1 = __importDefault(require("../enums/log-level.enum"));
-const colors = require('colors');
+var moment_1 = __importDefault(require("moment"));
+var _enums_1 = require("../enums");
+var colors = require('colors');
 colors.setTheme({
     notice: 'white',
     info: 'white',
@@ -18,32 +29,33 @@ colors.setTheme({
     datetime: 'blue',
     unknown: ['black', 'bgWhite']
 });
-class LogService {
-    constructor() {
+var LogService = /** @class */ (function () {
+    function LogService() {
         this.defaultOptions = {
             newline: 0,
             bold: false
         };
     }
-    log(level, message, options = {}) {
-        const opts = { ...this.defaultOptions, ...options };
+    LogService.prototype.log = function (level, message, options) {
+        if (options === void 0) { options = {}; }
+        var opts = __assign(__assign({}, this.defaultOptions), options);
         switch (level.toLowerCase()) {
-            case log_level_enum_1.default.Notice:
+            case _enums_1.LogLevel.Notice:
                 message = colors.notice(message);
                 break;
-            case log_level_enum_1.default.Info:
+            case _enums_1.LogLevel.Info:
                 message = colors.info(message);
                 break;
-            case log_level_enum_1.default.Success:
+            case _enums_1.LogLevel.Success:
                 message = colors.success(message);
                 break;
-            case log_level_enum_1.default.Warn:
+            case _enums_1.LogLevel.Warn:
                 message = colors.warn(message);
                 break;
-            case log_level_enum_1.default.Error:
+            case _enums_1.LogLevel.Error:
                 message = colors.error(message);
                 break;
-            case log_level_enum_1.default.Debug:
+            case _enums_1.LogLevel.Debug:
                 message = colors.debug('🪲 ' + message);
                 break;
             default:
@@ -63,27 +75,38 @@ class LogService {
         if (opts.break > 0) {
             console.log('\n'.repeat(opts.break));
         }
-    }
-    notice(message, opt = {}) {
-        this.log(log_level_enum_1.default.Notice, message, opt);
-    }
-    success(message, opt = {}) {
-        this.log(log_level_enum_1.default.Success, message, opt);
-    }
-    info(message, opt = {}) {
-        this.log(log_level_enum_1.default.Info, message, opt);
-    }
-    warn(message, opt = {}) {
-        this.log(log_level_enum_1.default.Warn, message, opt);
-    }
-    error(message, opt = {}) {
-        this.log(log_level_enum_1.default.Error, message, opt);
-    }
-    debug(message, opt = {}) {
-        this.log(log_level_enum_1.default.Debug, message, opt);
-    }
-    get time() {
-        return colors.datetime(`[ ${(0, moment_1.default)().format('YYYY.MM.DD HH:mm:ss')} ]`); // [ 2021.12.13  16:20:25 ]
-    }
-}
+    };
+    LogService.prototype.notice = function (message, opt) {
+        if (opt === void 0) { opt = {}; }
+        this.log(_enums_1.LogLevel.Notice, message, opt);
+    };
+    LogService.prototype.success = function (message, opt) {
+        if (opt === void 0) { opt = {}; }
+        this.log(_enums_1.LogLevel.Success, message, opt);
+    };
+    LogService.prototype.info = function (message, opt) {
+        if (opt === void 0) { opt = {}; }
+        this.log(_enums_1.LogLevel.Info, message, opt);
+    };
+    LogService.prototype.warn = function (message, opt) {
+        if (opt === void 0) { opt = {}; }
+        this.log(_enums_1.LogLevel.Warn, message, opt);
+    };
+    LogService.prototype.error = function (message, opt) {
+        if (opt === void 0) { opt = {}; }
+        this.log(_enums_1.LogLevel.Error, message, opt);
+    };
+    LogService.prototype.debug = function (message, opt) {
+        if (opt === void 0) { opt = {}; }
+        this.log(_enums_1.LogLevel.Debug, message, opt);
+    };
+    Object.defineProperty(LogService.prototype, "time", {
+        get: function () {
+            return colors.datetime("[ ".concat((0, moment_1.default)().format('YYYY.MM.DD HH:mm:ss'), " ]")); // [ 2021.12.13  16:20:25 ]
+        },
+        enumerable: false,
+        configurable: true
+    });
+    return LogService;
+}());
 exports.default = new LogService;
