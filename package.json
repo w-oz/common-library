@@ -3,21 +3,14 @@
   "description": "All common tools, utils and etc. for Biswap products",
   "version": "1.0.0",
   "private": true,
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "main": "./core/index.js",
+  "types": "./core/index.d.ts",
   "scripts": {
-    "build": "rm -rf ./dist && tsc && tsconfig-replace-paths -s ./src && npm pack"
+    "build": "rm -rf ./core && tsc && tsconfig-replace-paths -s ./src && npm pack"
   },
-  "files":[
-    "dist/**"
+  "files": [
+    "core/**"
   ],
-  "exports": {
-    "/": {
-      "import": "./dist/index.js",
-      "require": null
-    },
-    "constants": "./dist/constants"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/biswapcom/common-library.git"
@@ -26,7 +19,8 @@
     "nodejs",
     "mongodb",
     "typescript",
-    "rabbitmq"
+    "rabbitmq",
+    "bignumber"
   ],
   "author": "bs-dev",
   "license": "ISC",
@@ -36,6 +30,8 @@
   "homepage": "https://github.com/biswapcom/common-library#readme",
   "dependencies": {
     "colors": "^1.4.0",
+    "ethers-contracts": "^2.2.1",
+    "ethers-typescript-typings": "0.0.4",
     "moment": "^2.29.4",
     "tsconfig-replace-paths": "0.0.11",
     "web3": "^1.7.5"

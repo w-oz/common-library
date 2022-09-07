@@ -19,22 +19,17 @@
     "noImplicitAny": false,
     "strictNullChecks": false,
     "skipLibCheck": true,
+    "resolveJsonModule": true,
     "paths": {
-      "@constants/*": [
-        "./src/constants/*"
-      ],
-      "@enums": [
-        "./src/enums"
-      ],
-      "@enums/*": [
-        "./src/enums/*"
-      ],
-      "@src/*": [
-        "./src/*"
-      ],
-      "@services": [
-        "./src/services"
-      ]
+      "@abi/*": [ "./src/abi/*" ],
+      "@constants": [ "./src/constants" ],
+      "@constants/*": [ "./src/constants/*" ],
+      "@enums": [ "./src/enums" ],
+      "@enums/*": [ "./src/enums/*" ],
+      "@types": [ "./src/types" ],
+      "@types/*": [ "./src/types/*" ],
+      "@services": [ "./src/services" ],
+      "@src/*": [ "./src/*" ],
     },
   },
   "include": [
