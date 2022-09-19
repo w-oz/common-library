@@ -1,2 +1,2 @@
-export * from './contract.addresses';
-export * from './token.addresses';
+export * from './addresses';
+export * from './tokens';

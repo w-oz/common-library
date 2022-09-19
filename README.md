@@ -1,4 +1,4 @@
-# Biswap SDK
+# Biswap Common Library
 
 ### Prerequisites
 - Node v14 and above

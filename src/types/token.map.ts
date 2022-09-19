@@ -3,5 +3,6 @@ export type TokenMap = {
         address: string;
         symbol: string;
         name: string;
+        core: boolean;
     }
 };
