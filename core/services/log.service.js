@@ -109,4 +109,7 @@ var LogService = /** @class */ (function () {
     });
     return LogService;
 }());
-exports.default = new LogService;
+exports.default = {
+    logService: new LogService(),
+    LogService: LogService
+};

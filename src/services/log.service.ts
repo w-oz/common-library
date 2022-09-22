@@ -114,4 +114,7 @@ class LogService {
     }
 }
 
-export default new LogService;
+export default {
+    logService: new LogService(),
+    LogService
+}

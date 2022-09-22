@@ -17,5 +17,8 @@ declare class LogService {
     debug(message: any, opt?: LoggerOptionsType): void;
     get time(): string;
 }
-declare const _default: LogService;
+declare const _default: {
+    logService: LogService;
+    LogService: typeof LogService;
+};
 export default _default;
