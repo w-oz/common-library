@@ -39,6 +39,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.apiService = exports.ApiService = void 0;
 var node_fetch_1 = __importDefault(require("node-fetch"));
 var _configs_1 = require("../configs");
 var uri = "".concat(_configs_1.bsUri, "/back");
@@ -92,4 +93,5 @@ var ApiService = /** @class */ (function () {
     };
     return ApiService;
 }());
-exports.default = new ApiService();
+exports.ApiService = ApiService;
+exports.apiService = new ApiService();

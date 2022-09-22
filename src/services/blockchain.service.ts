@@ -2,7 +2,7 @@ import { toBN } from "@helpers";
 import { Pair } from "@types";
 import { ChainId } from "@enums";
 import { defaultChainId } from "@configs";
-import apiService from "@src/services/api.service";
+import { apiService } from "@src/services/api.service";
 import BN from "bignumber.js";
 import * as tokens from "@constants/tokens";
 

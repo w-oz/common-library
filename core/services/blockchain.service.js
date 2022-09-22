@@ -58,13 +58,11 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.blockchainService = exports.BlockchainService = void 0;
 var _helpers_1 = require("../helpers");
 var _configs_1 = require("../configs");
-var api_service_1 = __importDefault(require("./api.service"));
+var api_service_1 = require("./api.service");
 var tokens = __importStar(require("../constants/tokens"));
 var BlockchainService = /** @class */ (function () {
     function BlockchainService() {
@@ -124,7 +122,7 @@ var BlockchainService = /** @class */ (function () {
                         coreToken = tokenFrom;
                         coreTokenAmount = amount;
                         return [3 /*break*/, 3];
-                    case 1: return [4 /*yield*/, api_service_1.default.post('pool/exchange-pair', {
+                    case 1: return [4 /*yield*/, api_service_1.apiService.post('pool/exchange-pair', {
                             tokenFrom: tokenFrom,
                             coreTokens: coreTokens
                         })];
@@ -143,7 +141,7 @@ var BlockchainService = /** @class */ (function () {
                             return [2 /*return*/, coreTokenAmount.toString(10)];
                         }
                         corePairTokens = [coreToken, coreTokens.USDT].sort();
-                        return [4 /*yield*/, api_service_1.default.get('pool/core-pair', {
+                        return [4 /*yield*/, api_service_1.apiService.get('pool/core-pair', {
                                 tokenA: corePairTokens[0],
                                 tokenB: corePairTokens[1],
                             })];
@@ -217,4 +215,5 @@ var BlockchainService = /** @class */ (function () {
     };
     return BlockchainService;
 }());
-exports.default = new BlockchainService();
+exports.BlockchainService = BlockchainService;
+exports.blockchainService = new BlockchainService();

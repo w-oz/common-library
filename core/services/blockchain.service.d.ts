@@ -1,6 +1,6 @@
 import { Pair } from "../types";
 import { ChainId } from "../enums";
-declare class BlockchainService {
+export declare class BlockchainService {
     /**
      * Exchange liquidity provider token to USD
      *
@@ -33,5 +33,4 @@ declare class BlockchainService {
      */
     getAddressBySymbol(symbol: string, chainId?: ChainId): string;
 }
-declare const _default: BlockchainService;
-export default _default;
+export declare const blockchainService: BlockchainService;

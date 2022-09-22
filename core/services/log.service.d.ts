@@ -6,7 +6,7 @@ declare type LoggerOptionsType = {
     bold?: boolean;
     underline?: boolean;
 };
-declare class LogService {
+export declare class LogService {
     private readonly defaultOptions;
     log(level: string, message: any, options?: LoggerOptionsType): void;
     notice(message: string, opt?: LoggerOptionsType): void;
@@ -17,8 +17,5 @@ declare class LogService {
     debug(message: any, opt?: LoggerOptionsType): void;
     get time(): string;
 }
-declare const _default: {
-    logService: LogService;
-    LogService: typeof LogService;
-};
-export default _default;
+export declare const logService: LogService;
+export {};

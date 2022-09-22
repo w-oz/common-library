@@ -14,6 +14,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.logService = exports.LogService = void 0;
 var moment_1 = __importDefault(require("moment"));
 var _enums_1 = require("../enums");
 var colors = require('colors');
@@ -109,7 +110,5 @@ var LogService = /** @class */ (function () {
     });
     return LogService;
 }());
-exports.default = {
-    logService: new LogService(),
-    LogService: LogService
-};
+exports.LogService = LogService;
+exports.logService = new LogService();
