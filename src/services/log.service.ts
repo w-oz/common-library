@@ -26,7 +26,7 @@ type LoggerOptionsType = {
     underline?: boolean;
 }
 
-class LogService {
+export class LogService {
     private readonly defaultOptions: LoggerOptionsType = {
         newline: 0,
         bold: false
@@ -114,7 +114,4 @@ class LogService {
     }
 }
 
-export default {
-    logService: new LogService(),
-    LogService
-}
+export const logService = new LogService();

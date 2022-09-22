@@ -6,7 +6,7 @@ import apiService from "@src/services/api.service";
 import BN from "bignumber.js";
 import * as tokens from "@constants/tokens";
 
-class BlockchainService {
+export class BlockchainService {
 
     /**
      * Exchange liquidity provider token to USD
@@ -155,4 +155,4 @@ class BlockchainService {
 
 }
 
-export default new BlockchainService();
+export const blockchainService = new BlockchainService();
